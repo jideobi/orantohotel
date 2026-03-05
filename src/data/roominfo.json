@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "name": "Standard Suite",
+    "category": "Standard",
+    "price": 85000,
+    "description": "Experience comfort and elegance in our Deluxe Executive Room at Oranto International Airport Hotel. Perfect for business and leisure travelers with modern luxury amenities.",
+    "amenities": [
+      "Free WiFi",
+      "Smart TV",
+      "Air Conditioning",
+      "Hot Shower",
+      "King Size Bed"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+    ],
+    "policies": [
+      "Check-in: 2:00 PM",
+      "Check-out: 12:00 PM",
+      "No smoking inside rooms",
+      "Pets are not allowed"
+    ]
+  },
+    {
+    "id": 2,
+    "name": "Deluxe Suite",
+    "price": 85000,
+    "category": "Deluxe",
+    "description": "Experience comfort and elegance in our Deluxe Executive Room at Oranto International Airport Hotel. Perfect for business and leisure travelers with modern luxury amenities.",
+    "amenities": [
+      "Free WiFi",
+      "Smart TV",
+      "Air Conditioning",
+      "Hot Shower",
+      "King Size Bed"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+    ],
+    "policies": [
+      "Check-in: 2:00 PM",
+      "Check-out: 12:00 PM",
+      "No smoking inside rooms",
+      "Pets are not allowed"
+    ]
+  },
+    {
+    "id": 2,
+    "name": "Executive Suite",
+    "price": 85000,
+    "category": "Executive",
+    "description": "Experience comfort and elegance in our Deluxe Executive Room at Oranto International Airport Hotel. Perfect for business and leisure travelers with modern luxury amenities.",
+    "amenities": [
+      "Free WiFi",
+      "Smart TV",
+      "Air Conditioning",
+      "Hot Shower",
+      "King Size Bed"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+    ],
+    "policies": [
+      "Check-in: 2:00 PM",
+      "Check-out: 12:00 PM",
+      "No smoking inside rooms",
+      "Pets are not allowed"
+    ]
+  }
+]
