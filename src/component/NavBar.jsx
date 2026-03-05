@@ -67,7 +67,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-black px-6 pb-6 border-t border-gray-800">
+          <div className="md:hidden bg-black px-6 text-lg pb-6 border-t border-gray-800">
             <ul className="space-y-5 font-medium">
               <li>
                 <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>

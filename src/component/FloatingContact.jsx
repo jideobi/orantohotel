@@ -4,7 +4,7 @@ import { FaWhatsapp, FaPhoneAlt, FaCommentDots } from "react-icons/fa";
 export default function FloatingContact() {
   const [open, setOpen] = useState(false);
 
-  const phoneNumber = "2348030000000"; // replace with hotel number
+  const phoneNumber = "2349160002437"; // replace with hotel number
 
   const message = encodeURIComponent(
     "Hello Oranto International Airport Hotel, I would like to make a reservation."

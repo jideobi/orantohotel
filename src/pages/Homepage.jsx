@@ -145,13 +145,7 @@ function Homepage() {
           Reserve Now
         </button>
       </section>
-
-      {/* FOOTER */}
-      <footer className="bg-black py-12 text-center text-gray-500">
-        <p>© {new Date().getFullYear()} Oranto International Airport Hotel</p>
-        <p className="mt-2">All Rights Reserved.</p>
-      </footer>
-
+ 
     </div>
     </>
   )
