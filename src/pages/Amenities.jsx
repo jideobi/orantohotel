@@ -78,7 +78,7 @@ function Amenities() {
       {/* HERO SECTION */}
       <section className="relative h-[60vh] flex items-center justify-center text-center">
         <img
-          src="https://images.unsplash.com/photo-1561501900-3701fa6a0864"
+          src="https://i.ibb.co/6c7XVPG1/gym2.jpg"
           alt="Amenities"
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
@@ -124,9 +124,9 @@ function Amenities() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
-            "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-            "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+            "https://i.ibb.co/5xhK78cG/entrance.jpg",
+            "https://i.ibb.co/KpK2DYDB/FRONT-13.jpg",
+            "https://i.ibb.co/LzGZPvtY/keybard.jpg",
           ].map((img, index) => (
             <div
               key={index}

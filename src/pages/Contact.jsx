@@ -46,13 +46,13 @@ function Contact() {
                     <div className="bg-gray-900 p-8 rounded-2xl hover:bg-yellow-500 hover:text-black transition">
                         <FaLocationDot className="text-3xl mb-4 mx-auto" />
                         <h3 className="font-semibold mb-2">Address</h3>
-                        <p>Oranto Int'l Airport Hotel, Lagos, Nigeria</p>
+                        <p>Location: Plot no: 556, Akanu Ibiam, Emene, Enugu</p>
                     </div>
 
                     <div className="bg-gray-900 p-8 rounded-2xl hover:bg-yellow-500 hover:text-black transition">
                         <FaPhone className="text-3xl mb-4 mx-auto" />
                         <h3 className="font-semibold mb-2">Switchboard</h3>
-                        <p>+234 803 000 0000</p>
+                        <p>+234 916 000 2437</p>
                     </div>
 
                     <div className="bg-gray-900 p-8 rounded-2xl hover:bg-yellow-500 hover:text-black transition">

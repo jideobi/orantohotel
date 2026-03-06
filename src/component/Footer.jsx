@@ -17,7 +17,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold text-white mb-4">
-            Oranto Int'l Airport Hotel
+            Oranto Int'l Airport Hotel Enugu
           </h2>
           <p className="text-sm leading-relaxed opacity-80">
            A modern 4-star hospitality destination offering refined comfort,
@@ -59,7 +59,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>Email: info@orantohotel.ng</li>
             <li>Phone: +234 916 000 2437</li>
-            <li>Location: Enugu State Nigeria</li>
+            <li>Location: Plot no: 556, Akanu Ibiam, Emene, 4001004 Enugu</li>
           </ul>
         </div>
 
@@ -93,7 +93,7 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-xs opacity-70">
-          © {new Date().getFullYear()} Oranto Int'l Airport Hotel. All rights reserved.
+          © {new Date().getFullYear()} Oranto Int'l Airport Hotel Enugu. All rights reserved.
         </p>
 
         {/* Social Media */}

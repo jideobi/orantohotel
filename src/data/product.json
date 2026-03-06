@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Luxury Bath Towel",
+    "price": 25000,
+    "image": "https://i.ibb.co/fGrnVsDS/luxry-towl-removebg-preview.png",
+    "description": "Soft premium cotton bath towel used in Oranto Hotel rooms. Highly absorbent, durable, and designed to provide guests with a luxurious spa-like experience."
+  },
+  {
+    "id": 2,
+    "name": "Hotel Slippers",
+    "price": 4800,
+    "image": "https://i.ibb.co/20RZmgQb/slippers-removebg-preview.png",
+    "description": "Comfortable indoor hotel slippers offered to Oranto Hotel guests. Lightweight, breathable, and perfect for relaxation inside the room."
+  },
+  {
+    "id": 3,
+    "name": "Premium Soap Set",
+    "price": 3500,
+    "image": "https://i.ibb.co/rRMcpPrv/soap.jpg",
+    "description": "Luxury aromatic soap set used in Oranto Hotel bathrooms. Crafted with skin-friendly ingredients to provide a refreshing and relaxing bathing experience."
+  }
+]
