@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function VideoHeroBackground() {
     return (
@@ -32,12 +33,12 @@ export default function VideoHeroBackground() {
           </p>
 
           <div className="flex justify-center  gap-6">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-full font-semibold transition duration-300">
+            <Link to="/reservation" className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-full font-semibold transition duration-300">
               Book Your Stay
-            </button>
-            <button className="border border-whit text-white hover:bg-white hover:text-black px-8 py-3 rounded-full transition duration-300">
+            </Link>
+            <Link to="/rooms" className="border border-whit text-white hover:bg-white hover:text-black px-8 py-3 rounded-full transition duration-300">
               Explore Rooms
-            </button>
+            </Link>
           </div>
         </div>
       </section>

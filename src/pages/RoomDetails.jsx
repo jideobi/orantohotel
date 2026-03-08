@@ -1,11 +1,17 @@
 import React from "react";
 import roominfo from "../data/roominfo.json";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaWifi, FaTv, FaSnowflake, FaShower, FaBed } from "react-icons/fa6";
 
 export default function RoomDetails() {
 
-  const room = roominfo[0]; // later this can come from URL params
+  const { id } = useParams();
 
+  const room = roominfo.find((r) => r.id === Number(id));
+  if (!room) {
+    return <div className="p-40 text-center text-2xl">Room not found</div>;
+  }
   const iconMap = {
     "Free WiFi": <FaWifi />,
     "Smart TV": <FaTv />,
@@ -13,6 +19,7 @@ export default function RoomDetails() {
     "Hot Shower": <FaShower />,
     "King Size Bed": <FaBed />
   };
+  const navigate = useNavigate();
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -58,12 +65,12 @@ export default function RoomDetails() {
           <h3 className="text-2xl font-semibold mb-4">Gallery</h3>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {room.images.map((img, index) => (
+            {room?.images?.map((img, index) => (
               <img
                 key={index}
                 src={img}
-                className="rounded-lg"
-                alt="room"
+                alt={`${room.name} ${index + 1}`}
+                className="rounded-lg w-full h-48 object-cover hover:scale-105 transition duration-300"
               />
             ))}
           </div>
@@ -79,7 +86,13 @@ export default function RoomDetails() {
 
           <p className="text-gray-500 mb-6">Per Night</p>
 
-          <button className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700">
+
+          <button
+            onClick={() =>
+              navigate("/booking", { state: { room } })
+            }
+            className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700"
+          >
             Book Now
           </button>
 

@@ -12,6 +12,8 @@ import Dining from "./pages/Dining"
 import { CartProvider } from "./context/CartContext"
 import Shop from "./pages/Shop"
 import Cart from "./pages/Cart"
+import BookingPage from "./pages/BookingPage"
+import ReservationPage from "./pages/ReservationPage"
 function App() {
 
 
@@ -26,10 +28,12 @@ function App() {
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/amenities" element={<Amenities />} />
-          <Route path="/room/:id" element={<RoomDetails />} />
+          <Route path="/rooms/:id" element={<RoomDetails />} />
           <Route path="/dining" element={<Dining />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/booking" element={<BookingPage />} />
+          <Route path="/reservation" element={<ReservationPage />} />
         </Routes>
       </CartProvider>
       <Footer />

@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Standard Suite",
     "category": "Standard",
-    "price": 85000,
+    "price": 150000,
     "description": "Experience comfort and elegance in our Deluxe Executive Room at Oranto International Airport Hotel. Perfect for business and leisure travelers with modern luxury amenities.",
     "amenities": [
       "Free WiFi",
@@ -14,8 +14,8 @@
     ],
     "images": [
       "https://i.ibb.co/233wnDtY/FRONT-9.jpg",
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+      "https://i.ibb.co/233wnDtY/FRONT-9.jpg",
+      "https://i.ibb.co/233wnDtY/FRONT-9.jpg"
     ],
     "policies": [
       "Check-in: 2:00 PM",
@@ -27,7 +27,7 @@
     {
     "id": 2,
     "name": "Deluxe Suite",
-    "price": 85000,
+    "price": 250000,
     "category": "Deluxe",
     "description": "Experience comfort and elegance in our Deluxe Executive Room at Oranto International Airport Hotel. Perfect for business and leisure travelers with modern luxury amenities.",
     "amenities": [
@@ -39,8 +39,8 @@
     ],
     "images": [
       "https://i.ibb.co/67kDfWY0/FRONT-8.jpg",
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+      "https://i.ibb.co/bRzNL8Zq/FRONT-11.jpg",
+      "https://i.ibb.co/67kDfWY0/FRONT-8.jpg"
     ],
     "policies": [
       "Check-in: 2:00 PM",
@@ -50,9 +50,9 @@
     ]
   },
     {
-    "id": 2,
+    "id": 3,
     "name": "Executive Suite",
-    "price": 85000,
+    "price": 300000,
     "category": "Executive",
     "description": "Experience comfort and elegance in our Deluxe Executive Room at Oranto International Airport Hotel. Perfect for business and leisure travelers with modern luxury amenities.",
     "amenities": [
@@ -64,8 +64,8 @@
     ],
     "images": [
       "https://i.ibb.co/8LXJ9WD7/FRONT-7.jpg",
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+      "https://i.ibb.co/8LXJ9WD7/FRONT-7.jpg",
+      "https://i.ibb.co/8LXJ9WD7/FRONT-7.jpg"
     ],
     "policies": [
       "Check-in: 2:00 PM",

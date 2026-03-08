@@ -183,7 +183,7 @@ function Rooms() {
                 </div>
 
                 <Link
-                  to={`/room/${room.id}`}
+                  to={`/rooms/${room.id}`}
                   className="block text-center bg-yellow-500 text-black py-3 rounded-full font-semibold hover:bg-yellow-400 transition"
                 >
                   View Room Details

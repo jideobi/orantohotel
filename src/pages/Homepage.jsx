@@ -3,7 +3,7 @@ import VideoHeroBackground from '../component/VideoHeroBackground';
 import '../App.css'
 import TopContactBar from '../component/TopContactBar';
 import { Link } from 'react-router-dom';
-
+import rooms from "../data/roominfo.json";
 
 function Homepage() {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -61,7 +61,7 @@ function Homepage() {
 
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"
+                src="https://i.ibb.co/ZkmMhgL/reception.jpg"
                 alt="Hotel Interior"
                 className="rounded-3xl shadow-2xl"
               />
@@ -79,32 +79,44 @@ function Homepage() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {["Standard Suite", "Deluxe Suite", "Executive Suite"].map(
-              (room, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition duration-500"
+       {rooms.map((room) => (
+
+            <div
+              key={room.id}
+              className="bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition duration-500"
+            >
+
+              <img
+                src={room.images[0]}
+                alt={room.name}
+                className="h-64 w-full object-cover"
+              />
+
+              <div className="p-8">
+
+                <h3 className="text-2xl font-semibold mb-4">
+                  {room.name}
+                </h3>
+
+                <p className="text-gray-400 mb-6">
+                  {room.description.substring(0, 90)}...
+                </p>
+
+                <Link
+                  to={`/rooms/${room.id}`}
+                  className="text-yellow-500 font-semibold hover:underline"
                 >
-                  <img
-                    src="https://i.ibb.co/8LXJ9WD7/FRONT-7.jpg"
-                    alt={room}
-                    className="h-64 w-full object-cover"
-                  />
-                  <div className="p-8">
-                    <h3 className="text-2xl font-semibold mb-4">{room}</h3>
-                    <p className="text-gray-400 mb-6">
-                      Elegant interior, luxury bedding, high-speed WiFi,
-                      and 24-hour room service.
-                    </p>
-                    <Link to="/rooms" className="text-yellow-500 font-semibold hover:underline">
-                      View Details →
-                    </Link>
-                  </div>
-                </div>
-              )
-            )}
+                  View Details →
+                </Link>
+
+              </div>
+
+            </div>
+
+          ))}
           </div>
         </section>
+
 
         {/* AMENITIES */}
         <section className="py-24 px-6 md:px-20 bg-gradient-to-b from-gray-900 to-black">
@@ -141,9 +153,9 @@ function Homepage() {
           <p className="mb-8 text-lg">
             Reserve your room today and experience world-class hospitality.
           </p>
-          <button className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-gray-800 transition duration-300">
+          < Link to="/reservation" className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-gray-800 transition duration-300">
             Reserve Now
-          </button>
+          </Link>
         </section>
 
       </div>
