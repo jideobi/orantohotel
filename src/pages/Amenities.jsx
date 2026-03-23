@@ -1,7 +1,15 @@
-import {  FaUtensils, FaSpa, FaWifi, FaDumbbell, FaCar, FaBriefcase } from "react-icons/fa6";
-import { FaSwimmingPool, FaCocktail } from "react-icons/fa";
+import { 
+  FaUtensils, FaSpa, FaWifi, FaDumbbell, FaCar, FaBriefcase 
+} from "react-icons/fa6";
+
+import { 
+  FaSwimmingPool, FaCocktail, FaTree 
+} from "react-icons/fa";
 import TopContactBar from '../component/TopContactBar';
 import { useState, useEffect} from 'react'
+
+
+
 
 const amenities = [
   {
@@ -42,7 +50,50 @@ const amenities = [
   {
     icon: <FaCocktail />,
     title: "Luxury Bar",
-    description: "Enjoy premium cocktails and premium lounge experience.",
+    description: "Enjoy premium cocktails in a refined lounge atmosphere.",
+  },
+
+  // ✅ NEW PREMIUM AMENITIES
+  {
+    icon: <FaBriefcase />,
+    title: "Royal Board Room",
+    description: "Elegant and fully equipped boardroom for executive meetings.",
+  },
+  {
+    icon: <FaUtensils />,
+    title: "Coffee Lounge",
+    description: "Relax with premium coffee in a serene and stylish lounge setting.",
+  },
+  {
+    icon: <FaSpa />,
+    title: "Unisex Salon",
+    description: "Professional grooming and beauty services for all guests.",
+  },
+  {
+    icon: <FaCar />,
+    title: "MiniMart",
+    description: "Convenient on-site store for essentials and travel needs.",
+  },
+  {
+    icon: <FaBriefcase />,
+    title: "Executive Apartments",
+    description: "Luxurious fully furnished apartments designed for long stays.",
+  },
+  {
+    icon: <FaTree />,
+    title: "Royal Garden",
+    description: "Beautiful landscaped garden for relaxation and outdoor events.",
+  },
+ 
+  {
+    icon: <FaSpa />,
+    title: "Lawn & Table Tennis Court",
+    description: "Recreational space for sports and leisure activities.",
+  },
+  {
+    icon: <FaBriefcase />,
+    title: "All-Round Security Surveillance",
+    description: "24/7 advanced security system ensuring guest safety and protection.",
   },
 ];
 
