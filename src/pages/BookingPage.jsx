@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 export default function BookingPage() {
 
   const location = useLocation();
   const room = location.state?.room;
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const [formData, setFormData] = useState({
     roomName: room?.name || "",
@@ -26,12 +31,48 @@ export default function BookingPage() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Booking submitted successfully!");
+
+    // ✅ DATE VALIDATION (correct place)
+    if (new Date(formData.checkOut) <= new Date(formData.checkIn)) {
+      return setError("Check-out date must be after check-in date");
+    }
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await axios.post(
+        "https://orantohotel-backend.onrender.com/api/bookings",
+        formData
+      );
+
+      if (res.data.success) {
+        setSuccess(true);
+
+        // ✅ Reset form AFTER success
+        setFormData({
+          ...formData,
+          fullName: "",
+          email: "",
+          phone: "",
+          checkIn: "",
+          checkOut: "",
+          guests: 1,
+          specialRequest: ""
+        });
+      }
+
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
+  // ❌ No room selected
   if (!room) {
     return (
       <div className="text-center p-40 text-2xl">
@@ -40,6 +81,36 @@ export default function BookingPage() {
     );
   }
 
+  // 🎉 SUCCESS SCREEN (correct placement)
+  if (success) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-green-50">
+        <div className="bg-white p-10 rounded-2xl shadow-2xl text-center max-w-md">
+
+          <div className="text-6xl mb-4">🎉</div>
+
+          <h1 className="text-3xl font-bold text-green-600 mb-3">
+            Booking Confirmed!
+          </h1>
+
+          <p className="text-gray-600 mb-6">
+            Your reservation has been successfully processed.
+            A confirmation email and WhatsApp message have been sent.
+          </p>
+
+          <button
+            onClick={() => window.location.href = "/"}
+            className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+          >
+            Back to Home
+          </button>
+
+        </div>
+      </div>
+    );
+  }
+
+  // ✅ MAIN UI
   return (
     <div className="bg-gray-50 min-h-screen py-20 px-6">
 
@@ -77,7 +148,6 @@ export default function BookingPage() {
           </div>
         </div>
 
-
         {/* BOOKING FORM */}
         <div className="bg-white shadow-xl rounded-xl p-8">
 
@@ -87,51 +157,29 @@ export default function BookingPage() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
 
-            {/* ROOM NAME */}
-            <div>
-              <label className="text-sm text-gray-600">
-                Room Name
-              </label>
+            {/* ROOM DETAILS */}
+            <input
+              type="text"
+              value={formData.roomName}
+              readOnly
+              className="w-full border p-3 rounded-lg bg-gray-100"
+            />
 
-              <input
-                type="text"
-                name="roomName"
-                value={formData.roomName}
-                readOnly
-                className="w-full border p-3 rounded-lg bg-gray-100"
-              />
-            </div>
+            <input
+              type="text"
+              value={formData.category}
+              readOnly
+              className="w-full border p-3 rounded-lg bg-gray-100"
+            />
 
-            {/* ROOM CATEGORY */}
-            <div>
-              <label className="text-sm text-gray-600">
-                Room Category
-              </label>
+            <input
+              type="text"
+              value={`₦${Number(formData.price).toLocaleString()}`}
+              readOnly
+              className="w-full border p-3 rounded-lg bg-gray-100"
+            />
 
-              <input
-                type="text"
-                name="category"
-                value={formData.category}
-                readOnly
-                className="w-full border p-3 rounded-lg bg-gray-100"
-              />
-            </div>
-
-            {/* PRICE */}
-            <div>
-              <label className="text-sm text-gray-600">
-                Price Per Night
-              </label>
-
-              <input
-                type="text"
-                value={`₦${Number(formData.price).toLocaleString()}`}
-                readOnly
-                className="w-full border p-3 rounded-lg bg-gray-100"
-              />
-            </div>
-
-            {/* CUSTOMER NAME */}
+            {/* USER INPUTS */}
             <input
               type="text"
               name="fullName"
@@ -141,7 +189,6 @@ export default function BookingPage() {
               className="w-full border p-3 rounded-lg"
             />
 
-            {/* EMAIL */}
             <input
               type="email"
               name="email"
@@ -151,7 +198,6 @@ export default function BookingPage() {
               className="w-full border p-3 rounded-lg"
             />
 
-            {/* PHONE */}
             <input
               type="tel"
               name="phone"
@@ -163,35 +209,21 @@ export default function BookingPage() {
 
             {/* DATES */}
             <div className="grid grid-cols-2 gap-4">
+              <input
+                type="date"
+                name="checkIn"
+                required
+                onChange={handleChange}
+                className="w-full border p-3 rounded-lg"
+              />
 
-              <div>
-                <label className="text-sm text-gray-600">
-                  Check In
-                </label>
-
-                <input
-                  type="date"
-                  name="checkIn"
-                  required
-                  onChange={handleChange}
-                  className="w-full border p-3 rounded-lg"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-gray-600">
-                  Check Out
-                </label>
-
-                <input
-                  type="date"
-                  name="checkOut"
-                  required
-                  onChange={handleChange}
-                  className="w-full border p-3 rounded-lg"
-                />
-              </div>
-
+              <input
+                type="date"
+                name="checkOut"
+                required
+                onChange={handleChange}
+                className="w-full border p-3 rounded-lg"
+              />
             </div>
 
             {/* GUESTS */}
@@ -213,11 +245,28 @@ export default function BookingPage() {
               className="w-full border p-3 rounded-lg"
             />
 
+            {/* ERROR */}
+            {error && (
+              <p className="text-red-500 text-sm text-center">
+                {error}
+              </p>
+            )}
+
+            {/* BUTTON */}
             <button
               type="submit"
-              className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition"
+              disabled={loading}
+              className={`w-full py-3 rounded-lg text-white transition flex items-center justify-center gap-2
+              ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-green-600 hover:bg-green-700"}`}
             >
-              Confirm Booking
+              {loading ? (
+                <>
+                  <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  Processing...
+                </>
+              ) : (
+                "Confirm Booking"
+              )}
             </button>
 
           </form>
